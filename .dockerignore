@@ -1,0 +1,62 @@
+# Git
+.git
+.gitignore
+.github
+
+# IDE
+.vscode
+.idea
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Virtual environment
+venv/
+env/
+ENV/
+.venv
+
+# Python cache
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+
+# Documentation
+*.md
+!README.md
+SETUP_COMPLETE.md
+
+# Environment files
+.env
+.env.local
+.env.*.local
+
+# Temporary files
+tmp/
+temp/
+*.log
+
+# Jupyter notebooks (if any)
+*.ipynb
+.ipynb_checkpoints/
+
+# Test files
+tests/
+test_*.py
+*_test.py
+
+# Data files (if any)
+*.csv
+*.json
+*.parquet
+data/
+
+
+
+
