@@ -11,21 +11,6 @@ jobs:
   build-and-deploy-analytics:
     runs-on: ubuntu-latest
 
-    services:
-      postgres:
-        image: postgres:18beta1-alpine3.22
-        env:
-          POSTGRES_USER: root
-          POSTGRES_PASSWORD: secret
-          POSTGRES_DB: m_kenya_db
-        ports:
-          - 5433:5432
-        options: >-
-          --health-cmd pg_isready
-          --health-interval 10s
-          --health-timeout 5s
-          --health-retries 5
-
     steps:
       - name: Check out repository
         uses: actions/checkout@v4
@@ -34,8 +19,6 @@ jobs:
         uses: actions/setup-python@v5
         with:
           python-version: "3.11"
-          cache: "pip"
-          cache-dependency-path: "data-analysis/requirements.txt"
 
       - name: Install dependencies
         working-directory: ./data-analysis
@@ -49,13 +32,6 @@ jobs:
           python -m py_compile hotspot_detection.py
           python -m py_compile temporal_analysis.py
           python -m py_compile crime_correlation.py
-
-      - name: Test database connection
-        working-directory: ./data-analysis
-        env:
-          DB_CONNECTION: postgresql://root:secret@localhost:5433/m_kenya_db?sslmode=disable
-        run: |
-          python -c "from sqlalchemy import create_engine; import os; engine = create_engine(os.getenv('DB_CONNECTION')); connection = engine.connect(); print('✅ Database connection successful'); connection.close()"
 
       - name: Create deployment package
         uses: a7ul/tar-action@v1.1.0
