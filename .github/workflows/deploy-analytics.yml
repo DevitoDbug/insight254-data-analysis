@@ -21,13 +21,11 @@ jobs:
           python-version: "3.11"
 
       - name: Install dependencies
-        working-directory: ./data-analysis
         run: |
           pip install --upgrade pip
           pip install -r requirements.txt
 
       - name: Validate Python scripts
-        working-directory: ./data-analysis
         run: |
           python -m py_compile hotspot_detection.py
           python -m py_compile temporal_analysis.py
@@ -37,7 +35,7 @@ jobs:
         uses: a7ul/tar-action@v1.1.0
         with:
           command: c
-          cwd: "./data-analysis"
+          cwd: "./"
           files: |
             hotspot_detection.py
             temporal_analysis.py
