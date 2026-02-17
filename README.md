@@ -1,4 +1,4 @@
-# M-Kenya Data Analytics
+# Insight254 Data Analytics
 
 Python-based analytics pipeline for detecting crime patterns, hotspots, and predictions.
 
@@ -226,11 +226,4 @@ FROM crime_correlations;
 
 ---
 
-## Next Steps
-
-1. ✅ Set up Go API endpoints to serve analytics data
-2. ✅ Build Next.js dashboard to visualize results
-3. ✅ Schedule cron job for automatic updates
-4. 🔄 Add predictive modeling (Prophet/ARIMA for forecasting)
-5. 🔄 Integrate with Roboflow for image-based insights
 
