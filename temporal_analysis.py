@@ -1,9 +1,4 @@
 #!/usr/bin/env python3
-"""
-Temporal Pattern Analysis — identifies high-risk time periods
-by day of week and hour of day.
-"""
-
 import os
 from datetime import datetime
 

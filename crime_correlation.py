@@ -1,9 +1,4 @@
 #!/usr/bin/env python3
-"""
-Crime Correlation Analysis — detects incident clusters that may
-suggest organized crime or related series of events.
-"""
-
 import os
 from datetime import datetime
 

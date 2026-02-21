@@ -1,9 +1,4 @@
 #!/usr/bin/env python3
-"""
-Hotspot Detection — DBSCAN clustering to identify geographical
-areas with high incident concentration.
-"""
-
 import os
 from datetime import datetime
 
